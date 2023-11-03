@@ -3,8 +3,6 @@
   become: true
   roles:
   - { role: docker, tags: [ 'docker']}
-  - { role: ntp, tags: [ 'ntp']}
-  # - { role: linux, tags: [ ' werkt volgens jullie niet, dus er is niets te zien.']}
 
 - hosts: routers 
   gather_facts: true
@@ -24,21 +22,20 @@
   become_method: runas
   become_user: Administrator
   roles:
-  - { role: windows_ssh, tags: [ 'ssh']}
-  - { role: windows_roles, tags: [ 'roles']}
-  - { role: windows_adds, tags: [ 'adds']}
-  - { role: windows_ou, tags: [ 'ou']}
-  - { role: windows_agdlp, tags: [ 'agdlp']}
-  - { role: windows_users, tags: [ 'users']}
+  - { role: windows, tags: [ 'windows']}
   - { role: windows_shares, tags: [ 'shares']}
-  - { role: windows_updates, tags: [ 'updates']}
-  - { role: windows_backup, tags: [ 'backup']}
-  - { role: windows_restore, tags: [ 'restore']}
+  - { role: windows_adds, tags: [ 'adds']}
+  - { role: windows_agdlp, tags: [ 'agdlp']}
+  - { role: windows_ou, tags: [ 'ou']}
+  - { role: windows_ssh, tags: [ 'ssh']}
+  - { role: windows_users, tags: [ 'users']}
+  - { role: windows updates, tags: [ 'updates']}
 
 - hosts: Werkstations
   gather_facts: true
   become: yes
   become_method: runas
-  become_user: Administrator
+  become_user: michel
   roles:
   - { role: werkstations, tags: [ 'werkstations']}
+  - { role: windows_python, tags: [ 'python']}

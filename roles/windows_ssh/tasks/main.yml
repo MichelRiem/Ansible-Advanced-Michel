@@ -1,3 +1,5 @@
+---
+
 - name: Installeer OpenSSH.client
   ansible.windows.win_powershell:
     script: |

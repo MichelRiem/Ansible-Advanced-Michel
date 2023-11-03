@@ -1,4 +1,4 @@
-ansible_user: "Administrator"
+ansible_user: "michel"
 ansible_password: "{{ windows_password }}"
 ansible_become_password: "{{ windows_password }}"
 
@@ -11,8 +11,8 @@ computers: "{{ inventory_hostname }}"
 # ADDS
 dns_domain_name: "noorderpoort.intern"
 domain_netbios_name: "NOORDERPOORT"
-check_netbios_name: "NOORDERPOORT\\Administrator"
-domain_admin_user: "Administrator@noorderpoort.intern"
+check_netbios_name: "NOORDERPOORT\\Michel"
+domain_admin_user: "Michel@noorderpoort.intern"
 domain: "noorderpoort"
 controller: "intern"
 

@@ -1,9 +1,9 @@
-ansible_host: x.x.x.x
+ansible_host: 192.168.16.159
 
 # ADDS
 dns_domain_name: "noorderpoort.intern"
 domain_netbios_name: "NOORDERPOORT"
-check_netbios_name: "NOORDERPOORT\\Administrator"
+check_netbios_name: "NOORDERPOORT\\Michel"
 domain_admin_user: "Administrator@noorderpoort.intern"
 
 domain: "noorderpoort"
