@@ -29,7 +29,7 @@
   - { role: windows_ou, tags: [ 'ou']}
   - { role: windows_ssh, tags: [ 'ssh']}
   - { role: windows_users, tags: [ 'users']}
-  - { role: windows updates, tags: [ 'updates']}
+  - { role: windows_updates, tags: [ 'updates']}
 
 - hosts: Werkstations
   gather_facts: true
@@ -38,4 +38,5 @@
   become_user: michel
   roles:
   - { role: werkstations, tags: [ 'werkstations']}
-  - { role: windows_python, tags: [ 'python']}
+  - { role: windows_apps, tags: [ 'apps']}
+  - { role: windows_ai, tags: [ 'ai']}

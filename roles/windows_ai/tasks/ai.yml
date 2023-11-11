@@ -1,0 +1,20 @@
+  # Installeer de juiste github repo
+
+- name: Clone de Git-repo met de commandline
+  win_shell: |
+    git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git C:\AI\stable-diffusion-webui
+  args:
+    executable: cmd
+
+# reboot het werkstation
+
+- name: Reboot het werkstation
+  ansible.windows.win_reboot:
+
+
+# voer het .bat bestand uit:
+
+- name: Voer webui-user.bat uit
+  script: 'C:\AI\stable-diffusion-webui\webui-user.bat'
+  args:
+    executable: cmd
