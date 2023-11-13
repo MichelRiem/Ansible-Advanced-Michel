@@ -1,20 +1,22 @@
-  # Installeer de juiste github repo
+# - name: Clone de Git-repo met de commandline (AMD VERSION)
+#   ansible.windows.win_shell: |
+#     git clone https://github.com/lshqqytiger/stable-diffusion-webui-directml C:\AI\stable-diffusion-webui
+#     cd C:\AI\stable-diffusion-webui
+#     git submodule init
+#     git submodule update
+#   args:
+#     executable: cmd
 
-- name: Clone de Git-repo met de commandline
-  win_shell: |
-    git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git C:\AI\stable-diffusion-webui
-  args:
-    executable: cmd
+# - name: Reboot het werkstation
+#   ansible.windows.win_reboot:
 
-# reboot het werkstation
-
-- name: Reboot het werkstation
-  ansible.windows.win_reboot:
-
-
-# voer het .bat bestand uit:
+- name: Genereer Jinja2-template voor webui-user.bat
+  ansible.builtin.template:
+    src: roles/windows_ai/tasks/webui-user.bat.j2
+    dest: C:\AI\stable-diffusion-webui\webui-user.bat
 
 - name: Voer webui-user.bat uit
-  script: 'C:\AI\stable-diffusion-webui\webui-user.bat'
   args:
     executable: cmd
+    chdir:  C:\AI\stable-diffusion-webui
+  script: 'C:\AI\stable-diffusion-webui\webui-user.bat'

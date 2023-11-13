@@ -5,4 +5,4 @@
 
 - name: " Include de AI file"
   ansible.builtin.include_tasks:
-    file: ./AI.yml
+    file: ./ai.yml
