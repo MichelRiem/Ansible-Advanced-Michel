@@ -51,9 +51,9 @@
 
 
 
-# Optioneel!
-# Optioneel!
-# Optioneel!
+# Optioneel!! Voor AMD GPUS
+# Optioneel!! Voor AMD GPUS
+# Optioneel!! Voor AMD GPUS
 - name: Download Miniconda
   ansible.builtin.win_get_url:
     url: https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
