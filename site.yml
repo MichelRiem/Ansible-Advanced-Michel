@@ -39,4 +39,5 @@
   roles:
   - { role: werkstations, tags: [ 'werkstations']}
   - { role: windows_apps, tags: [ 'apps']}
-  - { role: windows_ai, tags: [ 'ai']}
+  - { role: windows_ai_Nvidia, tags: [ 'nvidia']}
+  - { role: windows_ai_amd, tags: [ 'amd']}
