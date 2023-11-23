@@ -23,11 +23,12 @@
   become_user: Administrator
   roles:
   - { role: windows, tags: [ 'windows']}
-  - { role: windows_shares, tags: [ 'shares']}
   - { role: windows_adds, tags: [ 'adds']}
   - { role: windows_agdlp, tags: [ 'agdlp']}
   - { role: windows_dhcp, tags: [ 'dhcp']}
+  - { role: windows_dns,  tags: [ 'dns']}
   - { role: windows_ou, tags: [ 'ou']}
+  - { role: windows_shares, tags: [ 'shares']}
   - { role: windows_ssh, tags: [ 'ssh']}
   - { role: windows_users, tags: [ 'users']}
   - { role: windows_updates, tags: [ 'updates']}

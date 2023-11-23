@@ -1,3 +1,5 @@
+# Dit playbook heeft 3 opties waaruit je kan kiezen. 
+
 - name: "Installeer alle security, critical & rollup updates"
   ansible.windows.win_updates:
    category_names:

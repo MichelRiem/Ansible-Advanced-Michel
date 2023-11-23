@@ -1,3 +1,5 @@
+# Dit playbook maakt de desbetreffende Groups aan.
+
 - name: "GlobalGroups voor de OU's"
   community.windows.win_domain_group:
     name: "{{ item.globalgroup }}"

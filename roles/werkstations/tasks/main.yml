@@ -1,7 +1,4 @@
-- name: "Include de Ansible-Vault file."
-  include_vars:
-    file: ../../../group_vars/Werkstations/vault.yml
-  no_log: true
+# Dit playbook maakt het werkstation lid van het domein.
 
 - name: Gather information about the domain membership
   win_domain_membership:

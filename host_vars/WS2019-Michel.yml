@@ -20,5 +20,23 @@ dnsserver: "{{ansible_host}}"
 router: 192.168.16.1
 scopeid: "192.168.16.0/24"
 
-#OU
+#FQDN = Fully Qualified Domain Name.
+#Scopeid = geeft aan waar de informatie vandaan gehaald moet worden, soort van NetworkID
+
+# DNS
+dynamic_update: secure
+replication: Forest
+network_id: 192.168.16.0/24
+pointer_name: 183 
+zone: 150.168.192.in-addr.arpa  
+
+
+# Commentaar
+
+# Pointer_name = laatste octet van je ip
+# Zelfde principe zoals subnet berekening maar dan met het netwerk, bijvoorbeeld:  180.16.168.192
+
+#Organizational Units
+
+# Hoofdafdeling
 rootOU: "NPAfdelingen"
