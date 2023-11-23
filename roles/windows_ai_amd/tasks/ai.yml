@@ -31,13 +31,13 @@
   args:
     executable: powershell
 
-- name: Maak het ONNX-model en optimaliseer het voor betere runtime
-  ansible.windows.win_shell: |
-    conda activate olive
-    cd C:\AI\olive\examples\directml\stable_diffusion
-    python stable_diffusion.py --optimize
-  args:
-    executable: powershell
+# - name: Maak het ONNX-model en optimaliseer het voor betere runtime
+#   ansible.windows.win_shell: |
+#     conda activate olive
+#     cd C:\AI\olive\examples\directml\stable_diffusion
+#     python stable_diffusion.py --optimize
+  # args:
+  #   executable: powershell
 
 - name: Reboot het werkstation
   ansible.windows.win_reboot:

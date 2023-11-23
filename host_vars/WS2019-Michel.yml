@@ -1,4 +1,4 @@
-ansible_host: 192.168.16.159
+ansible_host: 192.168.16.183
 
 # ADDS
 dns_domain_name: "noorderpoort.intern"
@@ -8,6 +8,17 @@ domain_admin_user: "Administrator@noorderpoort.intern"
 
 domain: "noorderpoort"
 controller: "intern"
+
+#DHCP
+
+FQDN: WS2019.noorderpoort.intern
+DHCP_SCOPE_NAME: "TestScope"
+start_range: 192.168.16.150
+end_range: 192.168.16.175
+subnetmask: 255.255.255.0
+dnsserver: "{{ansible_host}}"
+router: 192.168.16.1
+scopeid: "192.168.16.0/24"
 
 #OU
 rootOU: "NPAfdelingen"
