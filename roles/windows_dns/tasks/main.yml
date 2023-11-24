@@ -1,4 +1,4 @@
-#Dit playbook maakt alle relevante onderdelen van DNS in Active Directory
+#Dit playbook maakt alle relevante onderdelen van DNS in windows server
 - name: Maak een reverse lookup zone aan in dns van adds
   ansible.windows.win_powershell:
     script: |
