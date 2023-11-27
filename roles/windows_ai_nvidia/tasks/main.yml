@@ -6,9 +6,6 @@
   args:
     executable: cmd
 
-# - name: Reboot het werkstation
-#   ansible.windows.win_reboot:
-
 - name: Genereer Jinja2-template voor webui-user.bat
   ansible.builtin.template:
     src: roles/windows_ai/tasks/webui-user.bat.j2

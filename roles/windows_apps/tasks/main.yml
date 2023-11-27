@@ -1,13 +1,5 @@
 # Dit Playbook installeerd de benodigde softwares voor Stable-Diffusion (image generator (AI))
 
-
-# Maakt de map AI aan
-- name: Controleer of de map C:\AI bestaat
-  win_stat:
-    path: C:\AI
-  register: temp_dir_info
-  ignore_errors: true
-
 - name: Maak de map C:\AI aan als deze niet bestaat
   win_file:
     path: C:\AI
@@ -44,7 +36,3 @@
 - name: Controleer Git-versie
   win_command: git --version
   register: git_version
-
-- name: Debug - Controleren van Git-versie
-  debug:
-    var: git_version.stdout

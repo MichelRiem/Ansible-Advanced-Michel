@@ -26,6 +26,7 @@
     pip install pydantic==1.10.12
   args:
     executable: powershell
+
 - name: Installeer onnxruntime
   ansible.windows.win_shell: |
     conda activate olive
@@ -57,9 +58,6 @@
     git submodule update
   args:
     executable: cmd
-
-- name: Reboot het werkstation
-  ansible.windows.win_reboot:
 
 - name: Genereer Jinja2-template voor webui-user.bat
   ansible.builtin.template:
