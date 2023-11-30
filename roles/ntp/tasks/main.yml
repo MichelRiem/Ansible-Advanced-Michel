@@ -1,4 +1,3 @@
----
 - name: Set the ntp_driftfile variable.
   set_fact:
     ntp_driftfile: "{{ __ntp_driftfile }}"

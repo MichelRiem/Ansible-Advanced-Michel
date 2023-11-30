@@ -1,0 +1,15 @@
+ansible_user: "michel"
+ansible_password: "{{ password }}"
+ansible_become_password: "{{ password }}"
+
+create_user: user
+hostname: ubuntuserver
+sys_packages: 
+  - curl 
+  - software-properties-common
+  - vim
+  - apt-transport-https
+  - git
+  - build-essential
+  - ufw
+  - firewalld

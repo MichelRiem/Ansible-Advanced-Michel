@@ -1,4 +1,4 @@
-ansible_host: x.x.x.x
+ansible_host: 192.168.16.184
 
 __ntp_daemon: ntp
 ntp_tzdata_package: tzdata
@@ -8,7 +8,7 @@ __ntp_driftfile: /var/lib/ntp/drift
 ntp_cron_daemon: cron
 
 ntp_enabled: true
-ntp_timezone: Europe/Amsterdam
+ntp_timezone: Etc/UTC
 
 # ntp_daemon: [various]
 # ntp_package: ntp
@@ -31,5 +31,4 @@ ntp_restrict:
   - "::1"
 
 ntp_cron_handler_enabled: false
-
 ntp_tinker_panic: true
