@@ -26,9 +26,11 @@
   - { role: windows, tags: [ 'windows']}
   - { role: windows_adds, tags: [ 'adds']}
   - { role: windows_agdlp, tags: [ 'agdlp']}
+  - { role: windows_backup, tags: [ 'backup']}
   - { role: windows_dhcp, tags: [ 'dhcp']}
   - { role: windows_dns,  tags: [ 'dns']}
   - { role: windows_ou, tags: [ 'ou']}
+  - { role: windows_restore, tags: [ 'restore']}
   - { role: windows_shares, tags: [ 'shares']}
   - { role: windows_ssh, tags: [ 'ssh']}
   - { role: windows_users, tags: [ 'users']}
