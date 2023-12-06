@@ -29,6 +29,7 @@
   - { role: windows_backup, tags: [ 'backup']}
   - { role: windows_dhcp, tags: [ 'dhcp']}
   - { role: windows_dns,  tags: [ 'dns']}
+  - { role: windows_firewall, tags: [ 'firewall']}
   - { role: windows_ou, tags: [ 'ou']}
   - { role: windows_restore, tags: [ 'restore']}
   - { role: windows_shares, tags: [ 'shares']}
