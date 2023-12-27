@@ -1,4 +1,4 @@
-ansible_host: 192.168.16.189
+ansible_host: 192.168.16.199
 
 # ADDS
 dns_domain_name: "noorderpoort.intern"
@@ -28,7 +28,7 @@ dynamic_update: secure
 replication: Forest
 network_id: 192.168.16.0/24
 pointer_name: 183 
-zone: 150.168.192.in-addr.arpa  
+zone: 192.168.16.in-addr.arpa  
 
 
 # Commentaar

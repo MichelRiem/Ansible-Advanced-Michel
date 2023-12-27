@@ -4,6 +4,7 @@
   roles:
   - { role: docker, tags: [ 'docker']}
   - { role: linux, tags: [ 'linux']}
+  - { role: ntp, tags: [  'ntp']}
 
 - hosts: routers 
   gather_facts: true
@@ -30,6 +31,7 @@
   - { role: windows_dhcp, tags: [ 'dhcp']}
   - { role: windows_dns,  tags: [ 'dns']}
   - { role: windows_firewall, tags: [ 'firewall']}
+  - { role: windows_gpo,  tags: [ 'gpo']}
   - { role: windows_ou, tags: [ 'ou']}
   - { role: windows_restore, tags: [ 'restore']}
   - { role: windows_shares, tags: [ 'shares']}
