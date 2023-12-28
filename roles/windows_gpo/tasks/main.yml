@@ -1,8 +1,8 @@
-- name: Copy the backgrounds folder
+- name: Kopieer the backgrounds folder
   win_copy:
     src: ~/Backgrounds
     dest: C:\
-- name: Change the permissions of the folder Backgrounds
+- name: Verander de rechten van de folder Backgrounds
   ansible.windows.win_share:
     name: "Backgrounds"
     description: "Dit is een testshare voor Noorderpoort"
@@ -12,7 +12,7 @@
     change: "NOORDERPOORT\\DL_Administratie,NOORDERPOORT\\DL_SysAdmins,NOORDERPOORT\\DL_Automatisering,NOORDERPOORT\\DL_Verkoop,NOORDERPOORT\\DL_Inkoop,NOORDERPOORT\\DL_Directie,NOORDERPOORT\\DL_Rechterhand,NOORDERPOORT\\DL_Productie,NOORDERPOORT\\DL_Fabricage"
     state: present
 
-- name: Set Background for Groups
+- name: Verander de achtergrond voor de groepen
   ansible.windows.win_powershell: 
     script: |
       New-GPO -Name "Background GPO - {{item.group}}"
@@ -24,7 +24,7 @@
     - {group: "DL_Productie", ou: "Productie"}
     - {group: "DL_Directie", ou: "Directie"}
 
-- name: Set Background for Groups
+- name: Verander de achtergrond voor de subgroepen
   ansible.windows.win_powershell: 
     script: |
       New-GPO -Name "Background GPO - {{item.group}}"
@@ -35,7 +35,7 @@
     - {group: "DL_Fabricage", ou: "Fabricage", parentOU: "Productie"}
     - {group: "DL_Rechterhand", ou: "Rechterhand", parentOU: "Directie"}
 
-- name: Set Background for Groups in OUs
+- name: Verander de achtergrond voor Groups in OUs
   ansible.windows.win_powershell: 
     script: |
       Set-GPRegistryValue -Name "Background GPO - {{item.group}}" -Key "HKEY_CURRENT_USER\Control Panel\Desktop" -ValueName "Wallpaper" -Type String -Value "\\WinS2019\Backgrounds\{{item.group}}.jpg"
@@ -50,7 +50,7 @@
     - {group: "DL_Directie"}
     - {group: "DL_Rechterhand"}
 
-- name: Enforce GPOs for Subgroups
+- name: foeceer GPOs voor Subgroups
   ansible.windows.win_powershell: 
     script: |
       $GPOName = "Background GPO - {{item.group}}"
@@ -63,37 +63,16 @@
     - { group: "DL_Fabricage", ou: "Fabricage", parentOU: "Productie" }
     - { group: "DL_Rechterhand", ou: "Rechterhand", parentOU: "Directie" }
       
-- name: Create GPO to Disable Control Panel in NPAfdelingen
+- name: Creeer GPO om de control panel uit te zetten in NPAfdelingen
   ansible.windows.win_powershell: 
     script: |
       New-GPO -Name "Control Panel Disable GPO - NPAfdelingen"
       New-GPLink -Name "Control Panel Disable GPO - NPAfdelingen" -Target "OU=NPAfdelingen,DC={{domain}},DC={{controller}}"
 
-- name: Set Control Panel Restriction in NPAfdelingen
+- name: Restricties voor Control Panel in NPAfdelingen
   ansible.windows.win_powershell: 
     script: |
       Set-GPRegistryValue -Name "Control Panel Disable GPO - NPAfdelingen" -Key "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName "NoControlPanel" -Type DWord -Value 1
-
-# - name: Copy VBS Script to Remote Machines
-#   ansible.builtin.win_copy:
-#     src: scripts/loginmsg.vbs
-#     dest: C:\welcome-message.vbs
-
-# - name: Create GPO
-#   ansible.windows.win_powershell: 
-#     script: |
-#       New-GPO -Name "Logon Script GPO"
-#       Set-GPRegistryValue -Name "Logon Script GPO" -Key "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" -ValueName "LogonScript" -Type String -Value "C:\welcome-message.vbs"
-
-# - name: Link GPO to OU
-#   ansible.windows.win_powershell: 
-#     script: |
-#       New-GPLink -Name "Logon Script GPO" -Target "OU=NPAfdelingen,DC={{domain}},DC={{controller}}"
-
-# - name: Enforce GPO
-#   ansible.windows.win_powershell: 
-#     script: |
-#       Set-GPO -Name "Logon Script GPO" -GpoStatus AllSettingsEnabled
 
 - name: gpupdate
   win_command: gpupdate /force

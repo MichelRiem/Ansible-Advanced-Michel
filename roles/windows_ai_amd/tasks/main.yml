@@ -61,7 +61,7 @@
 
 - name: Genereer Jinja2-template voor webui-user.bat
   ansible.builtin.template:
-    src: roles/windows_ai/tasks/webui-user.bat.j2
+    src: roles/windows_ai_amd/tasks/webui-user.bat.j2
     dest: C:\AI\stable-diffusion-webui\webui-user.bat
 
 - name: Voer webui-user.bat uit
