@@ -8,11 +8,11 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - Maid
+    - Michel
     - Joshua
+    - Maid
     - Andy
     - Sebastiaan
-    - Michel
 
 - name: "Maak users aan in de groep 'studenten', ook met homefolder & wachtwoord"
   user:
@@ -24,11 +24,11 @@
     createhome: yes
     password: "{{ linux_user_password | password_hash('sha512') }}"
   with_items:
-    - Maid
+    - Michel
     - Joshua
+    - Maid
     - Andy
     - Sebastiaan
-    - Michel
   changed_when: false
 
 - name: "Pas de permissies aan voor de homefolders"
