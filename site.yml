@@ -2,10 +2,15 @@
   gather_facts: true
   become: true
   roles:
+  - { role: linux_backup, tags: [ 'linux_backup']}
+  - { role: linux_bash, tags: [ 'linux_bash']}
   - { role: docker, tags: [ 'docker']}
   - { role: linux, tags: [ 'linux']}
+  - { role: linux_firewall, tags: [ 'linux_firewall']}
+  - { role: linux_ntp, tags: [  'linux_ntp']}
+  - { role: linux_restore,  tags: [ 'linux_restore']}
   - { role: linux_users, tags:  [ 'linux_users']}
-  - { role: ntp, tags: [  'ntp']}
+
 
 - hosts: routers 
   gather_facts: true
