@@ -2,27 +2,27 @@
   gather_facts: true
   become: true
   roles:
-  - { role: linux_backup, tags: [ 'linux_backup']}
-  - { role: linux_bash, tags: [ 'linux_bash']}
-  - { role: docker, tags: [ 'docker']}
-  - { role: linux, tags: [ 'linux']}
-  - { role: linux_firewall, tags: [ 'linux_firewall']}
-  - { role: linux_ntp, tags: [  'linux_ntp']}
-  - { role: linux_restore,  tags: [ 'linux_restore']}
-  - { role: linux_users, tags:  [ 'linux_users']}
+  - { role: linux/backup, tags: [ 'linux_backup']}
+  - { role: linux/bash, tags: [ 'linux_bash']}
+  - { role: containers/docker, tags: [ 'docker']}
+  - { role: linux/basic, tags: [ 'basic']}
+  - { role: linux/firewall, tags: [ 'linux_firewall']}
+  - { role: linux/ntp, tags: [  'linux_ntp']}
+  - { role: linux/restore,  tags: [ 'linux_restore']}
+  - { role: linux/users, tags:  [ 'linux_users']}
 
 
 - hosts: routers 
   gather_facts: true
   become: true
   roles:
-  - { role: routers, tags: [ 'routers']}
+  - { role: netorking/routers, tags: [ 'routers']}
 
 - hosts: switches
   gather_facts: true
   become: true
   roles:
-  - { role: switches, tags: [ 'switches']}
+  - { role: networking/switches, tags: [ 'switches']}
 
 - hosts: WindowsServer
   gather_facts: true
@@ -30,20 +30,20 @@
   become_method: runas
   become_user: Administrator
   roles:
-  - { role: windows, tags: [ 'windows']}
-  - { role: windows_adds, tags: [ 'adds']}
-  - { role: windows_agdlp, tags: [ 'agdlp']}
-  - { role: windows_backup, tags: [ 'backup']}
-  - { role: windows_dhcp, tags: [ 'dhcp']}
-  - { role: windows_dns,  tags: [ 'dns']}
-  - { role: windows_firewall, tags: [ 'firewall']}
-  - { role: windows_gpo,  tags: [ 'gpo']}
-  - { role: windows_ou, tags: [ 'ou']}
-  - { role: windows_restore, tags: [ 'restore']}
-  - { role: windows_shares, tags: [ 'shares']}
-  - { role: windows_ssh, tags: [ 'ssh']}
-  - { role: windows_users, tags: [ 'users']}
-  - { role: windows_updates, tags: [ 'updates']}
+  - { role: windows/basic, tags: [ 'basic']}
+  - { role: windows/adds, tags: [ 'adds']}
+  - { role: windows/agdlp, tags: [ 'agdlp']}
+  - { role: windows/backup, tags: [ 'backup']}
+  - { role: windows/dhcp, tags: [ 'dhcp']}
+  - { role: windows/dns,  tags: [ 'dns']}
+  - { role: windows/firewall, tags: [ 'firewall']}
+  - { role: windows/gpo,  tags: [ 'gpo']}
+  - { role: windows/ou, tags: [ 'ou']}
+  - { role: windows/restore, tags: [ 'restore']}
+  - { role: windows/shares, tags: [ 'shares']}
+  - { role: windows/ssh, tags: [ 'ssh']}
+  - { role: windows/users, tags: [ 'users']}
+  - { role: windows/updates, tags: [ 'updates']}
 
 - hosts: Werkstations
   gather_facts: true
@@ -51,7 +51,7 @@
   become_method: runas
   become_user: michel
   roles:
-  - { role: werkstations, tags: [ 'werkstations']}
-  - { role: windows_apps, tags: [ 'apps']}
-  - { role: windows_ai_nvidia, tags: [ 'nvidia']}
-  - { role: windows_ai_amd, tags: [ 'amd']}
+  - { role: domain, tags: [ 'domain']}
+  - { role: apps, tags: [ 'apps']}
+  - { role: ai_nvidia, tags: [ 'nvidia']}
+  - { role: ai_amd, tags: [ 'amd']}

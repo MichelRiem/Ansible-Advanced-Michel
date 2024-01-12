@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Script 4: system_info_extended_with_temp_and_update.sh
-
 # Datum en tijd
 datum_en_tijd=$(date)
 
